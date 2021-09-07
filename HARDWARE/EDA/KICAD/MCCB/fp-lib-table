@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name NODEMCU_ESP32_DEVKIT_V1)(type KiCad)(uri ${KIPRJMOD}/COMPLEMENT/ESP32DEVKITV1/NODEMCU_ESP32_DEVKIT_V1.pretty)(options "")(descr ""))
+  (lib (name LM323)(type KiCad)(uri ${KIPRJMOD}/COMPLEMENT/LM323K/LM323.pretty)(options "")(descr ""))
+)

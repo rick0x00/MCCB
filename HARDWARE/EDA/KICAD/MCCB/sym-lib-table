@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name NODEMCU_ESP32_DEVKIT_V1)(type Legacy)(uri ${KIPRJMOD}/COMPLEMENT/ESP32DEVKITV1/NODEMCU_ESP32_DEVKIT_V1.lib)(options "")(descr ""))
+  (lib (name VOLTAGE_REGULATOR)(type Legacy)(uri "${KIPRJMOD}/COMPLEMENT/Three-terminal 3 A adjustable voltage regulators/VOLTAGE_REGULATOR.lib")(options "")(descr ""))
+  (lib (name lm7805_to220)(type Legacy)(uri "${KIPRJMOD}/COMPLEMENT/Three-terminal 3 A adjustable voltage regulators/lm7805_to220.lib")(options "")(descr ""))
+  (lib (name LM323)(type Legacy)(uri ${KIPRJMOD}/COMPLEMENT/LM323K/LM323.lib)(options "")(descr ""))
+)
