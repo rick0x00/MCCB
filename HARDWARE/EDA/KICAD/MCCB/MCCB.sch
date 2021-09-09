@@ -4,11 +4,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "MCCB"
+Date "2021-09-08"
+Rev "1"
+Comp "Silicon4007"
+Comment1 "Tec. Henrique Silva"
 Comment2 ""
 Comment3 ""
 Comment4 ""
