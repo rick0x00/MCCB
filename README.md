@@ -1,9 +1,11 @@
 # MCCB
 MODULO DE CONTROLE DE CARRINHO DE BRINQUEDO
 
-![mccb](https://github.com/silvajhb/MCCB/blob/master/HARDWARE/EDA/KICAD/DOCUMENTS/3D.png)
+![mccb_3D](https://github.com/silvajhb/MCCB/blob/master/HARDWARE/EDA/KICAD/DOCUMENTS/3D.png)
 
-![8bit computer 3D image Kicad](https://github.com/silvajhb/8bit-computer/blob/master/HARDWARE/EDA/DOCUMENTS/8-bit%20computer%20full.png)
+![mccb_PCB-CAD](https://github.com/silvajhb/MCCB/blob/master/HARDWARE/EDA/KICAD/DOCUMENTS/PCB-CAD.png)
+
+![mccb_SCHEMATIC](https://github.com/silvajhb/MCCB/blob/master/HARDWARE/EDA/KICAD/DOCUMENTS/SCHEMATIC.png)
 
 ## Warning
 I, the project maintainer ,am a beginner in this Open Source world, Git, GitHub... So I apologize in advance for any problems.
