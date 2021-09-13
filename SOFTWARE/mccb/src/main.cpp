@@ -9,6 +9,8 @@
 #define MotorRelayH2 19
 #define SteeringWheelRelayH1 5
 #define SteeringWheelRelayH2 18
+// define led Status ESP 32 Doit DEVKIT V1
+#define LedStatus 2
 
 int OLDSenseBUT=0; //valor de registro de alteração
 
@@ -72,7 +74,6 @@ void SteeringWheelDirection(){
   }
 }
 
-
 void Motion(){
   if (PedalSW == 1){
     if (SenseSW == 1){
@@ -121,6 +122,7 @@ void SenseState(){
     SenseBUTtmp = digitalRead(SenseBUT);
   }
   if (SenseBUTtmp != OLDSenseBUT){
+    digitalWrite(LedStatus, 1);
     OLDSenseBUT = SenseBUTtmp;
     if (SenseBUTtmp == 1){
       msg("mode go");
@@ -132,9 +134,9 @@ void SenseState(){
       SenseSW = -1;
       SenseSWAUX();
   	}
+    digitalWrite(LedStatus, 0);
   }
 }
-
 
 void PedalState(){
   if (RemoteControlON == 1){
@@ -146,6 +148,7 @@ void PedalState(){
   
   //chama a função para determinar o estado do motor;
   if (PedalSW != OLDPedalSW){
+    digitalWrite(LedStatus, 1);
     OLDPedalSW = PedalSW;
     if (PedalSW == 1){
       //se o pedal for pressionado, chama a função para liga-lo;
@@ -157,6 +160,7 @@ void PedalState(){
       msg("pedal livre");
       StopCar();
   	}
+    digitalWrite(LedStatus, 0);
   }
 }
 
@@ -170,6 +174,7 @@ void TurboState(){
   
   //define o modo turbo ligado ou desligado;
   if (TurboSW != OLDTurboSW){
+    digitalWrite(LedStatus, 1);
     OLDTurboSW = TurboSW;
     if (TurboSW == 1){
       //se o modo turbo for ligado;
@@ -183,9 +188,9 @@ void TurboState(){
       msg("modo turbo desativado");
       //Desliga o rele do modo tubo;
   	}
+    digitalWrite(LedStatus, 0);
   }
 }
-
 
 void MonitorControl(){
 }
@@ -201,6 +206,7 @@ void setup(){
   pinMode(SenseBUT, INPUT);
   pinMode(PedalBUT, INPUT);
   pinMode(TurboBUT, INPUT);
+  pinMode(LedStatus, OUTPUT);
   //-define 0 to all values
   digitalWrite(SteeringWheelRelayH1, 0);
   digitalWrite(SteeringWheelRelayH2, 0);
@@ -210,6 +216,9 @@ void setup(){
   TurboSW = 0;
   SenseSW = 0;
   PedalSW = 0;
+  digitalWrite(LedStatus, 1);
+  delay(100);
+  digitalWrite(LedStatus, 0);
 }
 
 void loop(){
