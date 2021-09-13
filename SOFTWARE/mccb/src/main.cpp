@@ -201,6 +201,15 @@ void setup(){
   pinMode(SenseBUT, INPUT);
   pinMode(PedalBUT, INPUT);
   pinMode(TurboBUT, INPUT);
+  //-define 0 to all values
+  digitalWrite(SteeringWheelRelayH1, 0);
+  digitalWrite(SteeringWheelRelayH2, 0);
+  digitalWrite(MotorRelayH1, 0);
+  digitalWrite(MotorRelayH2, 0);
+  digitalWrite(TurboRelay, 0);
+  TurboSW = 0;
+  SenseSW = 0;
+  PedalSW = 0;
 }
 
 void loop(){
@@ -208,7 +217,7 @@ void loop(){
   SenseState();
   PedalState();
   if (Serial.available()) { // Verificar se há caracteres disponíveis
-    dataSerial = Serial.readStringUntil('\n');
+    dataSerial = Serial.readString();
     Serial.print(dataSerial);
     Serial.println("");
     if (dataSerial == "start"){
@@ -227,7 +236,7 @@ void loop(){
     }
     while (RemoteControlON == 1){
       if (Serial.available()){
-      	dataSerial = Serial.readStringUntil('\n');
+      	dataSerial = Serial.readString();
     	  Serial.print(dataSerial);
     	  Serial.println("");
         if (dataSerial == "exit"){
