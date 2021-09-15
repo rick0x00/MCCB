@@ -270,11 +270,11 @@ void loop()
         dataSerial = Serial.readString();
         Serial.print(dataSerial);
         Serial.println("");
-        if (dataSerial == "start")
+        if (dataSerial == "start" || dataSerial == "s")
         {
             RemoteControlON = 1;
             msg("Start Remote Control");
-            msg("comndos possiveis:");
+            msg("comandos possiveis:");
             msg("go");
             msg("back");
             msg("left");
@@ -292,26 +292,26 @@ void loop()
                 dataSerial = Serial.readString();
                 Serial.print(dataSerial);
                 Serial.println("");
-                if (dataSerial == "exit")
+                if (dataSerial == "exit" || dataSerial == "e")
                 {
                     RemoteControlON = 0;
                     msg("Stop Remote Control");
                 }
-                if (dataSerial == "go")
+                if (dataSerial == "go" || dataSerial == "g")
                 {
                     SenseBUTtmp = 1;
                     SenseState();
                     delay(1100);
                     StopCar();
                 }
-                if (dataSerial == "back")
+                if (dataSerial == "back" || dataSerial == "b")
                 {
                     SenseBUTtmp = 0;
                     SenseState();
                     delay(1100);
                     StopCar();
                 }
-                if (dataSerial == "left")
+                if (dataSerial == "left" || dataSerial == "l")
                 {
                     SteeringWheelSense = -1;
                     SteeringWheelDirection();
@@ -319,7 +319,7 @@ void loop()
                     SteeringWheelSense = 0;
                     SteeringWheelDirection();
                 }
-                if (dataSerial == "right")
+                if (dataSerial == "right" || dataSerial == "r")
                 {
                     SteeringWheelSense = 1;
                     SteeringWheelDirection();
@@ -337,7 +337,7 @@ void loop()
                 {
                     StopCar();
                 }
-                if (dataSerial == "turbo")
+                if (dataSerial == "turbo" || dataSerial == "t")
                 {
                     TurboState();
                 }
